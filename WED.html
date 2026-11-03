@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Portfolio cá nhân của Mai Như Ý - sinh viên CNTT, định hướng Developer">
+  <title>Hồ sơ của Ý</title>
+  <link rel="stylesheet" href="CSS/WedCaNhan.css">
+  <script>document.documentElement.classList.add("is-locked");</script>
+</head>
+
+<body>
+
+  <div class="intro" id="intro" role="dialog" aria-label="Trang mở đầu">
+    <div class="intro__stage" id="intro-cover">
+      <div class="intro__book" id="intro-book">
+        <p class="intro__small">HỘ CHIẾU CÁ NHÂN · PERSONAL PASSPORT</p>
+        <svg class="intro__emblem" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="38"/>
+          <ellipse cx="50" cy="50" rx="16" ry="38"/>
+          <path d="M12 50h76M20 30h60M20 70h60"/>
+          <path d="M30 94l20-14 20 14"/>
+        </svg>
+        <h2 class="intro__passport">PASSPORT</h2>
+        <p class="intro__owner">MAI NHƯ Ý</p>
+        <p class="intro__small">DEVELOPER</p>
+        <span class="intro__chip" aria-hidden="true"></span>
+      </div>
+      <button class="btn intro__open" id="intro-open" type="button">Mở hộ chiếu</button>
+    </div>
+
+    <div class="intro__stage" id="intro-scan" hidden>
+      <p class="intro__title handwriting">Kiểm tra an ninh</p>
+      <ul class="intro__log" id="intro-log"></ul>
+      <div class="intro__bar" aria-hidden="true"><span id="intro-fill"></span></div>
+    </div>
+
+    <button class="intro__skip" id="intro-skip" type="button">Bỏ qua ›</button>
+  </div>
+
+  <svg class="bg-map" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <pattern id="map-dots" width="9" height="9" patternUnits="userSpaceOnUse">
+        <circle cx="4.5" cy="4.5" r="2" class="bg-map__dot"/>
+      </pattern>
+    </defs>
+
+    <g class="bg-map__land" fill="url(#map-dots)">
+      <path d="M80 90 L210 70 L290 110 L270 170 L230 200 L200 250 L150 210 L100 160Z"/>
+      <path d="M330 50 L400 45 L390 100 L345 105Z"/>
+      <path d="M230 270 L300 280 L310 340 L270 440 L240 400 L225 320Z"/>
+      <path d="M470 100 L540 85 L560 130 L520 160 L470 150Z"/>
+      <path d="M470 180 L560 175 L590 250 L550 340 L510 340 L480 260Z"/>
+      <path d="M560 80 L760 70 L860 120 L830 200 L760 240 L700 230 L640 190 L580 160Z"/>
+      <path d="M740 260 L820 270 L800 300 L740 290Z"/>
+      <path d="M780 340 L880 335 L890 400 L810 410Z"/>
+    </g>
+
+    <path id="flight-path" class="bg-map__route" d="M770 225 C 700 60, 560 40, 500 120 S 300 40, 170 130"/>
+    <g class="bg-map__city">
+      <circle cx="770" cy="225" r="6"/>
+      <circle cx="500" cy="120" r="5"/>
+      <circle cx="170" cy="130" r="6"/>
+      <text x="780" y="255">TP.HCM</text>
+      <text x="475" y="148">Quá cảnh</text>
+      <text x="120" y="160">Điểm đến</text>
+    </g>
+
+    <g id="plane" class="bg-map__plane">
+      <path d="M-14 0 L-4 -3 L0 -14 L4 -14 L2 -3 L12 -2 L14 -6 L17 -6 L15 0 L17 6 L14 6 L12 2 L2 3 L4 14 L0 14 L-4 3 Z" transform="rotate(90)"/>
+    </g>
+  </svg>
+
+  <header class="navbar">
+    <div class="navbar__progress" id="progress" aria-hidden="true"></div>
+    <nav class="navbar__inner" aria-label="Điều hướng chính">
+      <span class="navbar__logo">🅳 🅴 🆅 Như Ý</span>
+      <a class="navbar__link" href="#ho-so">Hồ sơ</a>
+      <a class="navbar__link" href="#muc-tieu">Mục tiêu</a>
+      <a class="navbar__link" href="#ky-nang">Kỹ năng</a>
+      <a class="navbar__link" href="#hanh-trinh">Hành trình</a>
+      <a class="navbar__link" href="#du-an">Dự án</a>
+      <a class="navbar__link" href="#con-dau">Chứng nhận</a>
+      <a class="navbar__link" href="#lien-he">Liên hệ</a>
+      <button class="navbar__theme-btn" id="theme-btn" type="button" aria-label="Đổi giao diện sáng/tối">🌓</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section section--first" id="ho-so">
+      <div class="passport">
+        <div class="passport__photo">
+          <img src="images/anhCaNhan.jpg" alt="Ảnh đại diện của Mai Như Ý">
+        </div>
+
+        <div class="passport__info">
+          <span class="passport__label">HỌ VÀ TÊN / FULL NAME</span>
+          <h1 class="passport__name">MAI NHƯ Ý</h1>
+          <p class="passport__role handwriting" data-words="Sinh viên CNTT|Developer tương lai|Game thủ|Người học không ngừng"><span id="typed">Sinh viên CNTT</span><span class="caret" aria-hidden="true"></span></p>
+
+          <dl class="passport__fields">
+            <div class="passport__field">
+              <dt>NGÀNH HỌC</dt>
+              <dd>Công nghệ thông tin</dd>
+            </div>
+            <div class="passport__field">
+              <dt>ĐỊNH HƯỚNG</dt>
+              <dd>Developer</dd>
+            </div>
+            <div class="passport__field">
+              <dt>NƠI CẤP</dt>
+              <dd>Trường ĐH.GTVTTPHCM(UTH)</dd>
+            </div>
+            <div class="passport__field">
+              <dt>HẾT HẠN</dt>
+              <dd>Không bao giờ ngừng học</dd>
+            </div>
+          </dl>
+
+          <p class="passport__intro">
+            Mình rất thích chơi game và cảm thấy thú vị khi sử dụng các hệ thống,
+            mình muốn hiểu rõ chúng được tạo ra như thế nào và vận hành ra sao đồng thời mình cũng muốn trở thành là người tạo ra chúng.
+        
+          </p>
+
+          <ul class="stats">
+            <li class="stats__item"><strong class="stats__num" data-count="3.1" data-decimals="1">3.1</strong><span class="stats__label">GPA / 4.0</span></li>
+            <li class="stats__item"><strong class="stats__num" data-count="2">2</strong><span class="stats__label">Dự án</span></li>
+            <li class="stats__item"><strong class="stats__num" data-count="6">6</strong><span class="stats__label">Kỹ năng</span></li>
+            <li class="stats__item"><strong class="stats__num" data-count="2024">2024</strong><span class="stats__label">Năm nhập học</span></li>
+          </ul>
+
+          <div class="passport__actions">
+            <a class="btn" href="#du-an">Xem chuyến đi của mình</a>
+            <a class="btn btn--outline" href="#lien-he">Gửi thư</a>
+          </div>
+        </div>
+
+        <div class="passport__approved handwriting" aria-hidden="true">ĐÃ DUYỆT</div>
+        <p class="passport__code" aria-hidden="true">
+          P&lt;VNM&lt;MAI&lt;&lt;NHU&lt;Y&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+          DEVELOPER&lt;&lt;&lt;HTML&lt;CSS&lt;JS&lt;PYTHON&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="muc-tieu">
+      <h2 class="section__title">Điểm đến</h2>
+      <p class="section__subtitle handwriting">Mục tiêu</p>
+
+      <div class="goal">
+        <p class="goal__text">
+          Hoàn thành lộ trình học theo đúng dự tính, học tập tích lũy những kiến thức chuyên ngành.
+          Trở thành một Developer tài ba 😎
+        </p>
+        <span class="goal__note handwriting">Cố gắng lên nhé tôi ơi!</span>
+      </div>
+    </section>
+
+    <section class="section" id="ky-nang">
+      <h2 class="section__title">Hành lý mang theo</h2>
+      <p class="section__subtitle handwriting">Kỹ năng chuyên môn</p>
+
+      <div class="skill-list">
+        <article class="skill" data-level="4">
+          <h3 class="skill__name">HTML &amp; CSS</h3>
+          <p class="skill__desc">Bố cục, responsive, animation</p>
+        </article>
+        <article class="skill" data-level="3">
+          <h3 class="skill__name">JavaScript</h3>
+          <p class="skill__desc">DOM, ES6, gọi API</p>
+        </article>
+        <article class="skill" data-level="3">
+          <h3 class="skill__name">Python</h3>
+          <p class="skill__desc">Script, xử lý dữ liệu</p>
+        </article>
+        <article class="skill" data-level="2">
+          <h3 class="skill__name">Java</h3>
+          <p class="skill__desc">OOP, bài tập thuật toán</p>
+        </article>
+        <article class="skill" data-level="3">
+          <h3 class="skill__name">Git &amp; GitHub</h3>
+          <p class="skill__desc">Commit, branch, làm việc nhóm</p>
+        </article>
+        <article class="skill" data-level="3">
+          <h3 class="skill__name">C++</h3>
+          <p class="skill__desc">OOP, bài tập thuật toán</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="hanh-trinh">
+      <h2 class="section__title">Trang thị thực</h2>
+      <p class="section__subtitle handwriting">Học vấn, kinh nghiệm, hoạt động</p>
+
+      <div class="visa-list">
+        <article class="visa">
+          <span class="visa__date handwriting">2024 – 2026</span>
+          <div>
+            <h3 class="visa__title">Sinh viên Công nghệ thông tin</h3>
+            <p class="visa__desc">Trường Đại học Giao Thông Vận Tải Thành Phố Hồ Chí Minh. GPA 3.1/4.0</p>
+          </div>
+        </article>
+        <article class="visa">
+          <span class="visa__date handwriting">Hè 2025</span>
+          <div>
+            <h3 class="visa__title">Thực tập quan sát quy trình thực tế</h3>
+            <p class="visa__desc">Công ty locknlock, quan sát quy trình nhập hàng xuất hàng và đưa ra các giải pháp để tối ưu không gian chiếm dụng.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="du-an">
+      <h2 class="section__title">Những chuyến đi đã đến</h2>
+      <p class="section__subtitle handwriting">Dự án cá nhân</p>
+
+      <div class="project-list">
+        <article class="project">
+          <div class="project__image">
+            <img src="images/anhWedCaNhan.jpg" alt="Giao diện: Giới thiệu bản thân">
+            <span class="project__badge handwriting">Chuyến 01</span>
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">Giới Thiệu bản thân</h3>
+            <p class="project__desc">WED giới thiệu bản thân</p>
+            <ul class="tag-list">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+            <a class="btn btn--outline btn--small" href="http://127.0.0.1:5500/WED.html">Xem demo</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__image">
+            <img src="images/anhQuanLiSV.jpg" alt="Dự án: Hệ thống quản lí sinh viên">
+            <span class="project__badge handwriting">Chuyến 02</span>
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">Quản lí sinh viên</h3>
+            <p class="project__desc">HỆ thống quản lí sinh viên</p>
+            <ul class="tag-list">
+              <li class="tag">C++</li>
+              <li class="tag">Draw.io</li>
+            </ul>
+            <a class="btn btn--outline btn--small" href="https://github.com/beminh362-ship-it/Project_Group4">Xem GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="con-dau">
+      <h2 class="section__title">Bộ sưu tập con dấu</h2>
+      <p class="section__subtitle handwriting">Chứng chỉ, giải thưởng, sở thích</p>
+
+      <div class="stamp-list">
+        <div class="stamp stamp--teal">
+          <strong class="stamp__title">Sở thích</strong>
+          <span class="stamp__note handwriting">Chơi game, Bóng chuyền , nhạc chill</span>
+        </div>
+        <div class="stamp stamp--empty">
+          <strong class="stamp__title">Huy Chương</strong>
+          <span class="stamp__note handwriting">Không có</span>
+        </div>
+        <div class="stamp stamp--empty">
+          <strong class="stamp__title">Giải thưởng</strong>
+          <span class="stamp__note handwriting">Không có</span>
+        </div>
+        <div class="stamp stamp--empty">
+          <strong class="stamp__title">Chứng chỉ IELTS</strong>
+          <span class="stamp__note handwriting">Chưa có</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="lien-he">
+    <p class="footer__title handwriting">Hẹn gặp ở điểm đến tiếp theo!</p>
+    <div class="contact">
+      <a class="contact__card" href="mailto:ymn8611@ut.edu.vn"><strong>✉ Email</strong><small>ymn8611@ut.edu.vn</small></a>
+      <a class="contact__card" href="https://github.com/ymn8611" target="_blank" rel="noopener"><strong>⌥ GitHub</strong><small>github.com/ymn8611</small></a>
+      <button class="contact__card" id="copy-email" type="button" data-email="ymn8611@ut.edu.vn"><strong>📋 Sao chép email</strong><small>bấm để copy</small></button>
+    </div>
+    <p class="footer__copy">© 2026 MAI NHƯ Ý.</p>
+  </footer>
+  <button class="to-top" id="to-top" type="button" aria-label="Lên đầu trang">↑</button>
+
+  <script src="JS/WedCaNhan.js"></script>
+</body>
+
+</html>
